@@ -4,6 +4,12 @@
 
 def sum arr
   # YOUR CODE HERE
+  if arr.empty?
+    return 0
+    
+  else
+    arr.reduce(:+)
+  end
 end
 
 def max_2_sum arr
