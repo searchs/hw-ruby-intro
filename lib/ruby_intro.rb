@@ -3,27 +3,54 @@
 # Part 1
 
 def sum arr
-  # YOUR CODE HERE
   if arr.empty?
-    return 0
-    
+      0
   else
-    arr.reduce(:+)
+      arr.reduce(:+)
   end
 end
 
 def max_2_sum arr
-  # YOUR CODE HERE
+  maxed = 0
+  if arr.empty?
+      return 0
+      elsif arr.size == 1
+      return arr[0]
+  else
+      arr.sort!.reverse!
+      maxed += arr[0]
+      maxed += arr[1]
+  end
+   maxed
 end
 
-def sum_to_n? arr, n
-  # YOUR CODE HERE
+def sum_to_n?(arr, n)
+  status = false
+  if arr.empty?
+      false
+      elsif  arr.size == 1
+      false
+  else
+combo = arr.combination(2).to_a
+combo.each { |c|
+    if c.reduce(:+) == n
+        status = true
+        break
+    else
+        status = false
+    end
+}
+ status
+      
+  end
+  
+  
 end
 
 # Part 2
 
 def hello(name)
-  # YOUR CODE HERE
+"Hello, #{name}"
 end
 
 def starts_with_consonant? s
