@@ -48,12 +48,15 @@ def hello name
 end
 
 def starts_with_consonant?(s)
-  y = s.to_s.chr
-  p = y.downcase! =~ /([^aeiou]|\W)/
-  if p == 0
-    true
+  th = ["a", "e", "i", "o", "u"]
+  alph = ('a'..'z').to_a
+  conso = alph - th
+  if s.nil? || s.size == 0 || s.empty?
+      return false
+  elsif conso.include?(s.chr.downcase)
+    return true
   else
-    false
+    return false
   end
 
 end
@@ -64,7 +67,6 @@ def binary_multiple_of_4? s
   elsif s =~ /([^01])/
     return false
   elsif s.to_i(2) % 4 == 0
-  p s.to_i(2)
     return true
   end
 end
@@ -74,9 +76,10 @@ end
 # Part 3
 
 class BookInStock
+  
   def initialize(isbn, price)
-    if isbn.nil? or price <= 0
-      raise ArgumentError, 'ISBN should be entered and Price must be greate than 0'
+    if isbn.nil? or price <= 0 or isbn.empty?
+          raise ArgumentError, 'ISBN should be entered and Price must be greate than 0'
     elsif isbn.class != String
       raise ArgumentError, 'ISBN format is wrong'
     else
