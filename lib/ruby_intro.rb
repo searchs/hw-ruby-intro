@@ -59,59 +59,17 @@ def starts_with_consonant?(s)
 end
 
 def binary_multiple_of_4? s
-  #   nums = 0
-  #   arr =[]
-  # def pow b, e
-  #   ([b] * e).inject(:*)
-  # end
-  
-  if s.nil? or s.empty?
+  if s.nil? or s.empty? 
     return false
   elsif s =~ /([^01])/
     return false
-  elsif s.to_i(2) != 0 and s.to_i(2) % 4 ==0
+  elsif s.to_i(2) % 4 == 0
+  p s.to_i(2)
     return true
   end
-  # q = s.split("")
-  # g = q.each { |m|
-  
-  # arr << m.to_i
-  
-  # }
-# p arr
-# if arr.size == 1 and arr[0] == 0
-# p "Zero here!"
-# end
-#   r = arr
-#   w = r.size - 1
-# if r.size == 1 and r[0] == 1
-#   return false
-# else
-#   r.each {|k|
-#     nums += k[0].to_i * pow(2,w).to_i
-#     w -= 1
-#   }
-# end
 end
   
-  
-# if nums != 0  and nums % 2 == 0 
-#   p nums
-# p "Divisible by 2!"
-#   if nums % 4 == 0
-#     p nums
-#     p "Divisible by 4!"
-#     return true
-#   else
-#     p "Not divible by 4"
-#     return false
-#   end
-# else
-#   p "Not Divisible by 2!"
-#   return false
-# end
 
-# end
 
 # Part 3
 
