@@ -48,9 +48,9 @@ def hello name
 end
 
 def starts_with_consonant?(s)
-  th = ["a", "e", "i", "o", "u"]
+  vo = ["a", "e", "i", "o", "u"]
   alph = ('a'..'z').to_a
-  conso = alph - th
+  conso = alph - vo
   if s.nil? || s.size == 0 || s.empty?
       return false
   elsif conso.include?(s.chr.downcase)
@@ -116,5 +116,3 @@ class BookInStock
   end
 
 end
-
-
